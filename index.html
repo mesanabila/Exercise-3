@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Contact</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Find contacts..">
+
+    <table id="myTable" border="1 solid #74b9ff">
+      <tr class="header">
+        <th style="width:60%;">Name</th>
+        <th style="width:40%;">Mobile</th>
+      </tr>
+      <tr>
+        <td>Alderaan</td>
+        <td>+44 173 592 1000</td>
+      </tr>
+      <tr>
+        <td>Yavin IV</td>
+        <td>+61 247 836 4500</td>
+      </tr>
+      <tr>
+        <td>Hoth</td>
+        <td>+32 380 730 9201</td>
+      </tr>
+      <tr>
+        <td>Dagobah</td>
+        <td>+91 730 492 2320</td>
+      </tr>
+      <tr>
+        <td>Bespin</td>
+        <td>+62 819 569 4040</td>
+      </tr>
+      <tr>
+        <td>Endor</td>
+        <td>+60 729 392 6278</td>
+      </tr>
+      <tr>
+        <td>Naboo</td>
+        <td>+27 635 264 3068</td>
+      </tr>
+      <tr>
+        <td>Coruscant</td>
+        <td>+12 935 845 6956</td>
+      </tr>
+      <tr>
+        <td>Kamino</td>
+        <td>+54 078 368 6753</td>
+      </tr>
+      <tr>
+        <td>Geonosis</td>
+        <td>+56 352 489 5879</td>
+      </tr>
+    </table> 
+    </div>
+
+    <script>
+        function myFunction() {
+
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+    </script>
+</body>
+</html>
